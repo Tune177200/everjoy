@@ -9,4 +9,4 @@
 
 <body <?php body_class(); ?>>
     <main>
-        <?php vantu_menu('main-menu') ?>
+        <?php //vantu_menu('main-menu') ?>
