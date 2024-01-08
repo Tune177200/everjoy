@@ -1,24 +1,69 @@
 h1 {
-    color: red;
+  color: red;
+}
+
+header .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+header .dropdown > .dropdown-toggle:active {
+  pointer-events: none;
+}
+
+.btn_black {
+  width: 140px;
+  height: 30px;
+  line-height: 30px;
+  padding: 10px 20px 10px 0px;
+  display: inline-block;
+  font-size: 13px;
+  border-bottom: 2px solid #333;
+  transform: perspective(1px) translateZ(0);
+  text-align: center;
+}
+
+.btn_black:hover {
+  color: #fff;
+  font-size: 15px;
 }
 
 .swiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* header */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin: 0 auto;
+}
+
+.icon_header li {
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+}
+
+.icon_header img {
+  width: 24px;
+  height: 24px;
 }
