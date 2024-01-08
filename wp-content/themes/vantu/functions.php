@@ -40,3 +40,10 @@ if(!function_exists('vantu_menu')){
         wp_nav_menu($menu);
     }
 }
+
+function loadStyle(){
+    wp_enqueue_style('index-css', get_stylesheet_directory_uri().'/assets/css/index.css');
+
+    wp_enqueue_script('index-js', get_stylesheet_directory_uri().'/assets/js/index.js', array('jquery'), false, true);
+}
+add_action('wp_enqueue_scripts', 'loadStyle');
