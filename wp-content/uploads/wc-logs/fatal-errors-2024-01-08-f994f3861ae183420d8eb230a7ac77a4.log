@@ -1,0 +1,14 @@
+2024-01-08T14:49:15+00:00 CRITICAL Uncaught Error: Call to undefined function directory_uri() in C:\xampp\htdocs\everjoy\wp-content\themes\vantu\functions.php:46
+Stack trace:
+#0 C:\xampp\htdocs\everjoy\wp-includes\class-wp-hook.php(324): loadStyle('')
+#1 C:\xampp\htdocs\everjoy\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\everjoy\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\everjoy\wp-includes\script-loader.php(2262): do_action('wp_enqueue_scri...')
+#4 C:\xampp\htdocs\everjoy\wp-includes\class-wp-hook.php(324): wp_enqueue_scripts('')
+#5 C:\xampp\htdocs\everjoy\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\everjoy\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\everjoy\wp-includes\general-template.php(3052): do_action('wp_head')
+#8 C:\xampp\htdocs\everjoy\wp-content\themes\vantu\header.php(9): wp_head()
+#9 C:\xampp\htdocs\everjoy\wp-includes\template.php(790): require_once('C:\\xampp\\htdocs...')
+#10  in C:\xampp\htdocs\everjoy\wp-content\themes\vantu\functions.php on line 46
+
