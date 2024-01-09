@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/custom_swiper.css">
     <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 
 <body>
-
-
     <header>
         <nav class="main-menu navbar navbar-expand-lg navbar-light bg-light justify-content-between align-items-center">
             <a class="navbar-brand" href="#">
@@ -87,34 +89,97 @@
         </nav>
     </header>
 
-
     <main>
-        <div class="swiper mySwiper">
+        <!-- Banner -->
+        <section>
+            <div class="swiper main_slide" id="main_slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="./assets/img/main_slide_01.jpg" alt="">
+                        </a>
+                        <div class="content left top">
+                            <div class="title"></div>
+                            <div class="main">전신을 감싸주는 온열 목공간</div>
+                            <div class="sub">사우나의 극치를 느껴보세요<br></div>
+                            <div class="button wrap_more" >
+                                <a href="">제품보러가기</a>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="./assets/img/main_slide_02.jpg" alt="">
+                        </a>
+                        <div class="content left top">
+                            <div class="title"></div>
+                            <div class="main">전신을 감싸주는 온열 목공간</div>
+                            <div class="sub">사우나의 극치를 느껴보세요<br></div>
+                            <div class="button wrap_more">
+                                <a href="">제품보러가기</a>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="./assets/img/main_slide_03.jpg" alt="">
+                        </a>
+                        <div class="content left top">
+                            <div class="title"></div>
+                            <div class="main">전신을 감싸주는 온열 목공간</div>
+                            <div class="sub">사우나의 극치를 느껴보세요<br></div>
+                            <div class="button wrap_more">
+                                <a href="">제품보러가기</a>
+                            </div>  
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+    
+            </div>
+        </section>
+
+        <!-- Type -->
+        <section class="block_type">
+           <div class="title">
+                <h2>카테고리</h2>
+                <span class="line sline view"></span>
+           </div>
+           <div class="swiper list_slide">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div>
-                        <img src="./assets/img/0803_main_slide_01.jpg" alt="">
-                    </div>
+                    <a>
+                        <img src="./assets/img/topban_02.jpg" alt="">
+                    </a>
                 </div>
                 <div class="swiper-slide">
-                    <div>
-                        <img src="./assets/img/0803_main_slide_01.jpg" alt="">
-                    </div>
+                    <a>
+                        <img src="./assets/img/topban_03.jpg" alt="">
+                    </a>
                 </div>
                 <div class="swiper-slide">
-                    <div>
-                        <img src="./assets/img/0803_main_slide_01.jpg" alt="">
-                    </div>
+                    <a>
+                        <img src="./assets/img/topban_04.jpg" alt="">
+                    </a>
                 </div>
-
+                <div class="swiper-slide">
+                    <a>
+                        <img src="./assets/img/topban_03.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a>
+                        <img src="./assets/img/topban_02.jpg" alt="">
+                    </a>
+                </div>
             </div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
-
         </div>
-
+        </section>
     </main>
 
     <footer>
