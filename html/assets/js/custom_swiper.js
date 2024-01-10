@@ -14,7 +14,6 @@ var swiper = new Swiper(".list_slide", {
         el: ".swiper-pagination",
     },
     loop: true,
-    slidesPerView: 4,
     breakpoints: {
         640: {
           slidesPerView: 1,
@@ -32,7 +31,17 @@ var swiper = new Swiper(".benefit_slide", {
   pagination: {
       el: ".swiper-pagination",
   },
-  slidesPerView: 4,
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
   spaceBetween: 10,
   centeredSlides: true,
   loop: true,
@@ -42,7 +51,17 @@ var swiper = new Swiper(".bestchoice_slide", {
   pagination: {
       el: ".swiper-pagination",
   },
-  slidesPerView: 6,
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 6,
+    },
+  },
   spaceBetween: 10,
   centeredSlides: true,
   loop: true,
