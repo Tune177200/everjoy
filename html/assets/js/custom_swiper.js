@@ -27,3 +27,23 @@ var swiper = new Swiper(".list_slide", {
         },
     }
 });
+
+var swiper = new Swiper(".benefit_slide", {
+  pagination: {
+      el: ".swiper-pagination",
+  },
+  slidesPerView: 4,
+  spaceBetween: 10,
+  centeredSlides: true,
+  loop: true,
+});
+
+var swiper = new Swiper(".bestchoice_slide", {
+  pagination: {
+      el: ".swiper-pagination",
+  },
+  slidesPerView: 6,
+  spaceBetween: 10,
+  centeredSlides: true,
+  loop: true,
+});
