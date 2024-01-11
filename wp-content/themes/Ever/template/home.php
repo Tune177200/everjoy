@@ -4,7 +4,7 @@
  */
 ?>
 <?php get_header(); ?>
-test
+
 <section>
                 <div class="swiper main_slide" id="main_slide">
                     <div class="swiper-wrapper">
