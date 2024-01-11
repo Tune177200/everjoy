@@ -12,9 +12,12 @@
 
 <body <?php body_class(); ?>>
     <header>
+        <?php 
+        $header = get_field('header', 'option');
+        ?>
         <nav class="main-menu navbar navbar-expand-lg navbar-light bg-light justify-content-between align-items-center">
             <a class="navbar-brand" href="#">
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/everjoy_logo1.png" alt="" />
+                <img src="<?php echo !empty($header['logo']) ? $header['logo']['url'] : get_stylesheet_directory_uri() ?>/assets/img/everjoy_logo1.png" alt="" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -60,25 +63,21 @@
                 </ul> -->
             </div>
 
-            <ul class="navbar-nav icon_header d-none d-lg-flex">
-                <li>
-                    <a href="">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/svg/user.svg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/svg/cart.svg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#none">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/svg/search.svg" alt="" />
-                    </a>
-                </li>
-            </ul>
+            <?php 
+            if(!empty($header['list_icon'])){
+                echo '<ul class="navbar-nav icon_header d-none d-lg-flex">';
+                    foreach($header['list_icon'] as $icon){ ?>
+                            <li>
+                                <a href="<?php echo !empty($icon['link']['url']) ? $icon['link']['url'] : '' ?>">
+                                    <img src="<?php echo !empty($icon['icon']) ? $icon['icon']['url'] : '' ?>" alt="" />
+                                </a>
+                            </li>
+                    <?php
+                       
+                    }
+                echo '</div>';
+            }
+            ?>
         </nav>
     </header>
     <main>
-        <?php //ever_menu('main-menu') 
-        ?>

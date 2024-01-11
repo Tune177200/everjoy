@@ -30,6 +30,11 @@ if(!function_exists('ever_theme_setup')){
     add_action('init', 'ever_theme_setup');
 }
 
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+   add_theme_support( 'woocommerce' );
+}      
+
 if(!function_exists('ever_menu')){
     function ever_menu($menu, $class){
         $menu = array(
