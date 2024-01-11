@@ -17,7 +17,7 @@
         ?>
         <nav class="main-menu navbar navbar-expand-lg navbar-light bg-light justify-content-between align-items-center">
             <a class="navbar-brand" href="#">
-                <img src="<?php echo !empty($header['logo']) ? $header['logo']['url'] : get_stylesheet_directory_uri() ?>/assets/img/everjoy_logo1.png" alt="" />
+                <img src="<?php echo !empty($header['logo']) ? $header['logo']['url'] : get_stylesheet_directory_uri().'/assets/img/everjoy_logo1.png' ?>" alt="" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
