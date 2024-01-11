@@ -53,51 +53,16 @@ $groups_category = get_field('groups_category');
             <div class="swiper-wrapper">
                 <?php foreach ($groups_category['list_category'] as $itemCat) { ?>
                     <div class="swiper-slide">
-                        <a href="<?php echo !empty($itemCat['link']) ? $itemCat['link'] : '#' ?>">
+                        <a href="<?php echo !empty($itemCat['link']['url']) ? $itemCat['link']['url'] : '#' ?>">
                             <img src="<?php echo $itemCat['banner']['url'] ?>" alt="" />
                         </a>
-                        <span class="main">시공 사우나</span>
+                        <span class="main"><?php echo $itemCat['title'] ?></span>
                     </div>
                 <?php } ?>
             </div>
         </div>
     <?php }
     ?>
-    <!-- <div class="swiper custom_swiper_pagination list_slide">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <a>
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/topban_02.jpg" alt="" />
-                </a>
-                <span class="main">시공 사우나</span>
-            </div>
-            <div class="swiper-slide">
-                <a>
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/topban_03.jpg" alt="" />
-                </a>
-                <span class="main">시공 사우나</span>
-            </div>
-            <div class="swiper-slide">
-                <a>
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/topban_04.jpg" alt="" />
-                </a>
-                <span class="main">시공 사우나</span>
-            </div>
-            <div class="swiper-slide">
-                <a>
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/topban_03.jpg" alt="" />
-                </a>
-                <span class="main">시공 사우나</span>
-            </div>
-            <div class="swiper-slide">
-                <a>
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/topban_02.jpg" alt="" />
-                </a>
-                <span class="main">시공 사우나</span>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div> -->
 </section>
 
 <!-- Benefit -->
