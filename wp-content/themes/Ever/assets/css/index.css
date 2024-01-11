@@ -14,6 +14,7 @@ p {
 
 a:hover {
     text-decoration: none;
+    color: #000;
 }
 
 img {
@@ -101,6 +102,75 @@ header .main-menu .navbar-brand {
     width: 24px;
     height: 24px;
 }
+
+.menu-custom > .menu > li {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px 10px;
+    transition: all 1s cubic-bezier(0.19,1,0.22,1);
+    color: #222;
+}
+
+.menu-custom > .menu > li a{
+    display: block;
+}
+
+.menu-custom > .menu > li::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 100%;
+    bottom: 5px;
+    background: #333;
+    height: 1px;
+    transition: all 0.5s cubic-bezier(0.19,1,0.22,1);
+}
+
+.menu-custom > .menu > li:hover::before {
+    right: 0;
+}
+
+.menu-custom > .menu > li:hover > .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    font-size: 13px;
+    color: #333;
+    line-height: 30px;
+    font-weight: 300;
+    padding: 10px;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.sub-menu > li:hover {
+    background: #eee;
+    transition: all 0.5s cubic-bezier(0.19,1,0.22,1);
+    border-radius: 3px;
+}
+
+
+@media screen and (max-width: 992px) {
+    .sub-menu {
+        position: static;
+        float: none;
+        text-align: left;
+    }
+}
+
 
 /*Main*/
 

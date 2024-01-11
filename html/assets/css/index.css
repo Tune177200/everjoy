@@ -14,6 +14,7 @@ p {
 
 a:hover {
     text-decoration: none;
+    color: #000;
 }
 
 img {
@@ -101,6 +102,77 @@ header .main-menu .navbar-brand {
     width: 24px;
     height: 24px;
 }
+
+.menu-custom > .menu > li {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px 10px;
+    transition: all 1s cubic-bezier(0.19,1,0.22,1);
+    color: #222;
+}
+
+.menu-custom > .menu > li a{
+    display: block;
+}
+
+.menu-custom > .menu > li::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 100%;
+    bottom: 5px;
+    background: #333;
+    height: 1px;
+    transition: all 0.5s cubic-bezier(0.19,1,0.22,1);
+}
+
+.menu-custom > .menu > li:hover::before {
+    right: 0;
+}
+
+.menu-custom > .menu > li:hover > .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    font-size: 13px;
+    color: #333;
+    line-height: 30px;
+    font-weight: 300;
+    padding: 10px;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.sub-menu > li:hover {
+    background: #eee;
+    transition: all 0.5s cubic-bezier(0.19,1,0.22,1);
+    border-radius: 3px;
+}
+
+
+@media screen and (max-width: 992px) {
+    .sub-menu {
+        position: static;
+        float: none;
+        text-align: left;
+    }
+}
+
+
+/*Main*/
 
 main {
     padding: 0 0 80px;
@@ -209,7 +281,7 @@ main {
 /* Best choice  */
 
 .block_bestchoice {
-    padding: 0 5% 30px;
+    padding: 0 30px;
     border-bottom: 1px solid black;
     margin-bottom: 40px;
 }
@@ -479,4 +551,165 @@ main {
     font-size: 12px;
     color: #393939;
     padding: 15px 0px;
+}
+
+/* Footer  */
+
+.bottom_nav {
+    padding: 10px 30px;
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 52px;
+    transition: all 1s cubic-bezier(0.19,1,0.22,1);
+    background: white;
+    z-index: 999;
+}
+
+.bottom_nav_hide {
+    transform: translate3d(0,60px,0);
+}
+
+.bottom_nav img {
+    width: 27px;
+    height: 27px;
+}
+
+.bottom_nav .navbar-toggler:focus {
+    outline : none;
+}
+
+.bottom_nav .navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.block_footer {
+    padding: 0 30px 20px;
+}
+
+.block_footer .title{
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    padding: 15px 0;
+    margin-bottom: 0;
+}
+
+.block_footer .contents {
+    line-height: 23px;
+    padding: 5px 5px 5px 0;
+    color: #333;
+    display: inline-block;
+    font-size: 13px;
+}
+
+
+.block_footer .contents a::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #333;
+    height: 1px;
+    transition: all 0.5s cubic-bezier(0.19,1,0.22,1);
+}
+
+.block_footer .contents a:hover::before{
+    right: 0;
+}
+
+.block_footer .contents .call {
+    font-weight: 400;
+    font-size: 25px;
+    padding: 0 0 15px 0;
+}
+
+.block_footer .contents .company {
+    font-size: 20px;
+    padding: 0 0 15px 0;
+}
+
+.block_footer .contents strong {
+    color: #999;
+}
+
+.block_footer .contents span {
+    margin: 0 10px 0 0;
+}
+
+.block_footer .cpr_area {
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+    color: #999;
+}
+
+@media (max-width: 1024px) {
+    .block_footer .contents {
+        display: none;
+    }
+
+    .block_footer .row .col-lg-3{
+        text-align: center;
+        border-top: 1px solid #eee;
+    }
+
+    .block_footer .contents.active {
+        display: block;
+        padding: 15px 0;
+    }
+
+    .block_footer .title {
+        cursor: pointer;
+    }
+}
+
+.block_footer .col-lg-3 > .title::before {
+    top: 3px;
+    left: 200px;
+}
+
+.block_footer .col-lg-3 > .title::before {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    content: "";
+    display: block;
+    background: #333;
+    width: 15px;
+    height: 1px;
+    margin: 23px auto 0;
+    transition: .3s ease-out;
+    transform: rotate(90deg);
+}
+
+.block_footer .col-lg-3.selected > .title::before {
+    transform: rotate(0deg);
+    opacity: 0;
+}
+
+.block_footer .col-lg-3 > .title::after {
+    top: 28px;
+    left: 200px;
+}
+
+.block_footer .col-lg-3 > .title::after {
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    content: "";
+    display: block;
+    background: #333;
+    width: 15px;
+    height: 1px;
+    margin: -2px auto 0;
+    transition: .3s ease-out;
+    transform: rotate(0deg);
+}
+
+.block_footer .col-lg-3.selected > .title::after {
+    opacity: 1;
 }
