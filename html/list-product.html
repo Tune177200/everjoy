@@ -13,6 +13,7 @@
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <link rel="stylesheet" href="./assets/css/custom_swiper.css" />
         <link rel="stylesheet" href="./assets/css/index.css" />
@@ -86,7 +87,7 @@
                             <img src="./assets/img/svg/cart.svg" alt="" />
                         </a>
                     </li>
-                    <li>
+                    <li data-toggle="modal" data-target="#search_modal">
                         <a href="#none">
                             <img src="./assets/img/svg/search.svg" alt="" />
                         </a>
@@ -94,6 +95,23 @@
                 </ul>
             </nav>
         </header>
+
+        <div class="modal fade search_modal" id="search_modal" tabindex="-1"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <form class="search_input d-flex" action="">
+                        <input type="text" placeholder="Search.." name="search2">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                      </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <main>
             <section class="block_banner">
@@ -163,7 +181,9 @@
                                 </div>
 
                                 <div class="price">
-                                    <span class="woocommerce-Price-amount amount"><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span>
+                                    <span class="woocommerce-Price-amount amount"
+                                        ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -190,8 +210,7 @@
 
                                 <div class="price">
                                     <span class="woocommerce-Price-amount amount">
-                                        <bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span>
-                                        </bdi>
+                                        <bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span> </bdi>
                                     </span>
                                 </div>
                             </div>
@@ -337,6 +356,15 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="box_pagination">
+                    <a href="#none"><i class="fas fa-step-backward"></i></a>
+                    <a href="#none" ><i class="fas fa-chevron-left"></i></a>
+                    <a class="middle">
+                        <p>1</p>
+                    </a>
+                    <a href="#none" class="SGR_opacity"><i class="fas fa-chevron-right"></i></a>
+                    <a href="#none" class="last SGR_opacity"><i class="fas fa-step-forward"></i></a>
                 </div>
             </div>
         </main>

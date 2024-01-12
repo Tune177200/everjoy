@@ -302,14 +302,18 @@ main {
     color: black;
 }
 
-.block_bestchoice .description .price {
+.block_bestchoice .description .price-product {
     margin-top: 20px;
     font-size: 17px;
     font-weight: 500;
     color: black;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-end;
 }
 
-.block_bestchoice .description .price span {
+.block_bestchoice .description .price-product del {
     font-size: 13px;
     color: #999;
     text-decoration: line-through;
