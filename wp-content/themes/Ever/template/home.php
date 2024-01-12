@@ -38,9 +38,7 @@ if (!empty($groups_banner['list_banner'])) {
         </div>
     </section>
 <?php } ?>
-<?php
-$groups_category = get_field('groups_category');
-?>
+<?php $groups_category = get_field('groups_category'); ?>
 <!-- Type -->
 <section class="block_type">
     <div class="title">
@@ -64,49 +62,33 @@ $groups_category = get_field('groups_category');
     <?php }
     ?>
 </section>
-
+<?php $groups_benefit = get_field('groups_benefit'); ?>
 <!-- Benefit -->
 <section class="block_benefit">
     <div class="title">
-        <h2>쇼핑혜택</h2>
+        <h2><?php echo !empty($groups_benefit['title']) ? $groups_benefit['title'] : '쇼핑혜택' ?></h2>
         <span class="line sline view"></span>
     </div>
-    <div class="swiper custom_swiper_pagination benefit_slide">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/Benefit1.jpg" alt="브랜드쿠폰" />
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/Benefit2.jpg" alt="브랜드쿠폰" />
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/Benefit3.jpg" alt="브랜드쿠폰" />
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/Benefit1.jpg" alt="브랜드쿠폰" />
-                </a>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/Benefit2.jpg" alt="브랜드쿠폰" />
-                </a>
+    <?php if (!empty($groups_benefit['list_benefit'])) { ?>
+        <div class="swiper custom_swiper_pagination benefit_slide">
+            <div class="swiper-wrapper">
+                <?php foreach ($groups_benefit['list_benefit'] as $itemBenefit) { ?>
+                    <div class="swiper-slide">
+                        <a href="<?php echo !empty($itemBenefit['link']['url']) ? $itemBenefit['link']['url'] : '#' ?>">
+                            <img src="<?php echo $itemBenefit['image']['url'] ?>" />
+                        </a>
+                    </div>
+                <?php } ?>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-        <div class="swiper-pagination"></div>
-    </div>
+    <?php } ?>
 </section>
-
+<?php $groups_bestchoice = get_field('groups_bestchoice'); ?>
 <!-- Best Choice -->
 <section class="block_bestchoice">
     <div class="title">
-        <h2>베스트 랭킹</h2>
+        <h2><?php echo !empty($groups_bestchoice['title']) ? $groups_bestchoice['title'] : '베스트 랭킹' ?></h2>
         <span class="line sline view"></span>
     </div>
     <div class="swiper bestchoice_slide">
@@ -191,34 +173,31 @@ $groups_category = get_field('groups_category');
         </div>
     </div>
 </section>
-
+<?php $groups_story = get_field('groups_story'); ?>
 <!-- Story -->
 <section class="block_story">
     <div id="parallax" class="area"></div>
     <div class="title">
-        <h2>브랜드 스토리</h2>
+        <h2><?php echo !empty($groups_story['title']) ? $groups_story['title'] : '브랜드 스토리' ?></h2>
         <span class="line sline view"></span>
     </div>
     <div class="brand_story d-lg-flex">
         <div class="img">
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/Brand_Story.jpg" alt="" />
+            <img src="<?php echo !empty($groups_story['image']) ? $groups_story['image']['url'] : get_stylesheet_directory_uri() . '/assets/img/Brand_Story.jpg' ?>">
         </div>
         <div class="txt">
-            <h3>'타협하지 않는 목공의 마음'</h3>
+            <h3><?php echo !empty($groups_story['sub_title']) ? $groups_story['sub_title'] : '타협하지 않는 목공의 마음' ?></h3>
             <p>
-                오롯이 나무만이 줄 수 있는 온도, 향, 감촉 그리고<br />
-                따스함이 스며든 사우나의 공감각적 느낌을 온전히 전하기 위해,<br />
-                나무 내부까지 타협하지 않는 목공의 마음으로 만들었습니다.
+                <?php echo !empty($groups_story['description']) ? $groups_story['description'] : '' ?>
             </p>
-            <p>지금, 브랜드 스토리에서 확인해보세요.</p>
-            <a href="" class="btn_black"> 더 알아보기 </a>
+            <a href="<?php echo !empty($groups_story['link_button']['url']) ? $groups_story['link_button']['url'] : '#' ?>" class="btn_black"> <?php echo !empty($groups_story['title_button']) ? $groups_story['title_button'] : '더 알아보기' ?> </a>
         </div>
     </div>
 </section>
-
+<?php $groups_review = get_field('groups_review'); ?>
 <section class="block_review">
     <div class="title">
-        <h2>리뷰</h2>
+        <h2><?php echo !empty($groups_review['title']) ? $groups_review['title'] : '리뷰' ?></h2>
         <span class="line sline view"></span>
     </div>
     <div class="filter text-right">
@@ -228,183 +207,65 @@ $groups_category = get_field('groups_category');
             <option value="mercedes">리뷰 추천순</option>
         </select>
     </div>
-    <div class="row">
-        <div class="col-6 col-lg-3">
-            <div class="box_review" data-toggle="modal" data-target="#image_zoom">
-                <div class="image">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/product_1.jpg" alt="" />
-                </div>
-                <div class="detail_review">
-                    <div class="review_count">
-                        <span class="star pin_custom_font_color">★★★★★</span>
-                    </div>
-                    <div class="review_text">
-                        <p>
-                            이사할때 가장 사고싶었던것 중 하나인게 바로바로 에버조이 반식욕기였다 리퍼제품도 있었지만 이왕사는거 오래오래 잘 써보려고 가장 비싼걸로
-                            구매했다 ㅋㅋ 구매후 이삿날 당일 정신이 없는 가운데에서도 받은 에버조이 반신욕기 사이즈가 엄청 클주 알았지만 생각보다 귀염귀염 사이즈 양쪽에
-                            들어가는 문이 있어서 좌우 상관없이 들어갈수있어서 매우 좋다!!! 반신욕기 를 내돈 내산 해서 사도 좋았겠지만 ㅋㅋㅋ 7주년 결혼기념일 선물로
-                            받았는데 이것또한 나쁘지않다 ㅋㅋㅋ 현실적으로 좋은선물이니깐 ㅋㅋㅋ 나만 좋은면 된거지모 오늘부터 영하 10도로 날이 훅 추워줬는데 반신욕기에
-                            앉아있으니 잠이 솔솔온다 불면증에도 수족냉증에도 도움이 될듯한 반신욕기 10-20년이고 오래오래 망가지지않고 잘써보고싶다 히히
-                        </p>
-                    </div>
-                    <div class="name_reviewer">서**</div>
-                </div>
-                <div class="box_review_sub d-flex">
-                    <div class="image">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/sub_review.jpg" alt="" />
-                    </div>
-                    <div class="txt">
-                        <p>[4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송)</p>
-                        <div class="rating d-flex">
-                            <div class="item_rating">
-                                <p class="value_text">
-                                    평점
-                                    <span class="value">5.0</span>
+    <?php if (!empty($groups_review['list_review'])) { ?>
+        <div class="row">
+            <?php
+            foreach ($groups_review['list_review'] as $itemReview) { ?>
+                <?php
+                $product_review = get_field('product_review', $itemReview);
+                $thumbnail = get_the_post_thumbnail_url($itemReview);
+                $title = get_the_title($itemReview);
+                $places = get_field('places', $itemReview);
+                $count_review = get_field('count_review', $itemReview);
+                $titleProduct = $product_review->post_title;
+                $thumbnailProduct = get_the_post_thumbnail_url($product_review);
+                $nameReview = get_field('name_review', $itemReview);
+                $linkProduct = get_permalink($itemReview);
+                ?>
+                <div class="col-6 col-lg-3">
+                    <div class="box_review" data-toggle="modal" data-target="#image_zoom">
+                        <div class="image">
+                            <img src="<?php echo $thumbnail ?>" alt="" />
+                        </div>
+                        <div class="detail_review">
+                            <div class="review_count">
+                                <span class="star pin_custom_font_color">★★★★★</span>
+                            </div>
+                            <div class="review_text">
+                                <p>
+                                    <?php echo $title ?>
                                 </p>
                             </div>
-                            <div class="rating_count">
-                                <p class="value_text">
-                                    리뷰
-                                    <span class="value">42</span>
-                                </p>
+                            <div class="name_reviewer"><?php echo $nameReview ?></div>
+                        </div>
+                        <div class="box_review_sub d-flex">
+                            <div class="image">
+                                <a href="<?php echo $linkProduct ?>"><img src="<?php echo $thumbnailProduct ?>" alt="" /></a>
+                            </div>
+                            <div class="txt">
+                                <p><?php echo $titleProduct ?></p>
+                                <div class="rating d-flex">
+                                    <div class="item_rating">
+                                        <p class="value_text">
+                                            평점
+                                            <span class="value"><?php echo $places ?></span>
+                                        </p>
+                                    </div>
+                                    <div class="rating_count">
+                                        <p class="value_text">
+                                            리뷰
+                                            <span class="value"><?php echo $count_review ?></span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php }
+            ?>
         </div>
-        <div class="col-6 col-lg-3">
-            <div class="box_review" data-toggle="modal" data-target="#image_zoom">
-                <div class="image">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/product_5.jpg" alt="" />
-                </div>
-                <div class="detail_review">
-                    <div class="review_count">
-                        <span class="star pin_custom_font_color">★★★★★</span>
-                    </div>
-                    <div class="review_text">
-                        <p>
-                            이사할때 가장 사고싶었던것 중 하나인게 바로바로 에버조이 반식욕기였다 리퍼제품도 있었지만 이왕사는거 오래오래 잘 써보려고 가장 비싼걸로
-                            구매했다 ㅋㅋ 구매후 이삿날 당일 정신이 없는 가운데에서도 받은 에버조이 반신욕기 사이즈가 엄청 클주 알았지만 생각보다 귀염귀염 사이즈 양쪽에
-                            들어가는 문이 있어서 좌우 상관없이 들어갈수있어서 매우 좋다!!! 반신욕기 를 내돈 내산 해서 사도 좋았겠지만 ㅋㅋㅋ 7주년 결혼기념일 선물로
-                            받았는데 이것또한 나쁘지않다 ㅋㅋㅋ 현실적으로 좋은선물이니깐 ㅋㅋㅋ 나만 좋은면 된거지모 오늘부터 영하 10도로 날이 훅 추워줬는데 반신욕기에
-                            앉아있으니 잠이 솔솔온다 불면증에도 수족냉증에도 도움이 될듯한 반신욕기 10-20년이고 오래오래 망가지지않고 잘써보고싶다 히히
-                        </p>
-                    </div>
-                    <div class="name_reviewer">서**</div>
-                </div>
-                <div class="box_review_sub d-flex">
-                    <div class="image">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/sub_review.jpg" alt="" />
-                    </div>
-                    <div class="txt">
-                        <p>[4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송)</p>
-                        <div class="rating d-flex">
-                            <div class="item_rating">
-                                <p class="value_text">
-                                    평점
-                                    <span class="value">5.0</span>
-                                </p>
-                            </div>
-                            <div class="rating_count">
-                                <p class="value_text">
-                                    리뷰
-                                    <span class="value">42</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3">
-            <div class="box_review" data-toggle="modal" data-target="#image_zoom">
-                <div class="image">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/product_1.jpg" alt="" />
-                </div>
-                <div class="detail_review">
-                    <div class="review_count">
-                        <span class="star pin_custom_font_color">★★★★★</span>
-                    </div>
-                    <div class="review_text">
-                        <p>
-                            이사할때 가장 사고싶었던것 중 하나인게 바로바로 에버조이 반식욕기였다 리퍼제품도 있었지만 이왕사는거 오래오래 잘 써보려고 가장 비싼걸로
-                            구매했다 ㅋㅋ 구매후 이삿날 당일 정신이 없는 가운데에서도 받은 에버조이 반신욕기 사이즈가 엄청 클주 알았지만 생각보다 귀염귀염 사이즈 양쪽에
-                            들어가는 문이 있어서 좌우 상관없이 들어갈수있어서 매우 좋다!!! 반신욕기 를 내돈 내산 해서 사도 좋았겠지만 ㅋㅋㅋ 7주년 결혼기념일 선물로
-                            받았는데 이것또한 나쁘지않다 ㅋㅋㅋ 현실적으로 좋은선물이니깐 ㅋㅋㅋ 나만 좋은면 된거지모 오늘부터 영하 10도로 날이 훅 추워줬는데 반신욕기에
-                            앉아있으니 잠이 솔솔온다 불면증에도 수족냉증에도 도움이 될듯한 반신욕기 10-20년이고 오래오래 망가지지않고 잘써보고싶다 히히
-                        </p>
-                    </div>
-                    <div class="name_reviewer">서**</div>
-                </div>
-                <div class="box_review_sub d-flex">
-                    <div class="image">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/sub_review.jpg" alt="" />
-                    </div>
-                    <div class="txt">
-                        <p>[4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송)</p>
-                        <div class="rating d-flex">
-                            <div class="item_rating">
-                                <p class="value_text">
-                                    평점
-                                    <span class="value">5.0</span>
-                                </p>
-                            </div>
-                            <div class="rating_count">
-                                <p class="value_text">
-                                    리뷰
-                                    <span class="value">42</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3">
-            <div class="box_review" data-toggle="modal" data-target="#image_zoom">
-                <div class="image">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/product_1.jpg" alt="" />
-                </div>
-                <div class="detail_review">
-                    <div class="review_count">
-                        <span class="star pin_custom_font_color">★★★★★</span>
-                    </div>
-                    <div class="review_text">
-                        <p>
-                            이사할때 가장 사고싶었던것 중 하나인게 바로바로 에버조이 반식욕기였다 리퍼제품도 있었지만 이왕사는거 오래오래 잘 써보려고 가장 비싼걸로
-                            구매했다 ㅋㅋ 구매후 이삿날 당일 정신이 없는 가운데에서도 받은 에버조이 반신욕기 사이즈가 엄청 클주 알았지만 생각보다 귀염귀염 사이즈 양쪽에
-                            들어가는 문이 있어서 좌우 상관없이 들어갈수있어서 매우 좋다!!! 반신욕기 를 내돈 내산 해서 사도 좋았겠지만 ㅋㅋㅋ 7주년 결혼기념일 선물로
-                            받았는데 이것또한 나쁘지않다 ㅋㅋㅋ 현실적으로 좋은선물이니깐 ㅋㅋㅋ 나만 좋은면 된거지모 오늘부터 영하 10도로 날이 훅 추워줬는데 반신욕기에
-                            앉아있으니 잠이 솔솔온다 불면증에도 수족냉증에도 도움이 될듯한 반신욕기 10-20년이고 오래오래 망가지지않고 잘써보고싶다 히히
-                        </p>
-                    </div>
-                    <div class="name_reviewer">서**</div>
-                </div>
-                <div class="box_review_sub d-flex">
-                    <div class="image">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/sub_review.jpg" alt="" />
-                    </div>
-                    <div class="txt">
-                        <p>[4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송)</p>
-                        <div class="rating d-flex">
-                            <div class="item_rating">
-                                <p class="value_text">
-                                    평점
-                                    <span class="value">5.0</span>
-                                </p>
-                            </div>
-                            <div class="rating_count">
-                                <p class="value_text">
-                                    리뷰
-                                    <span class="value">42</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php } ?>
+    
 </section>
 <?php get_footer(); ?>
