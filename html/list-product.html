@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="./assets/css/custom_swiper.css" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
+    </head>
+
+    <body>
+        <header>
+            <nav class="main-menu navbar navbar-expand-lg navbar-light bg-light justify-content-between align-items-center">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/everjoy_logo1.png" alt="" />
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse menu-custom" id="navbarNav">
+                    <ul id="menu-main-menu" class="navbar-nav menu">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="brandDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                브랜드
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="brandDropdown">
+                                <a class="dropdown-item" href="/brand?section=1">목공의 마음</a>
+                                <a class="dropdown-item" href="/brand?section=2">목공의 전문성</a>
+                                <a class="dropdown-item" href="/brand?section=3">온열 목공간</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                전체상품
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="productsDropdown">
+                                <a class="dropdown-item" href="/product/list.html?cate_no=130">족욕기</a>
+                                <a class="dropdown-item" href="/product/list.html?cate_no=131">반신욕기</a>
+                                <a class="dropdown-item" href="/product/list.html?cate_no=132">홈사우나</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/board/gallery/list.html?board_no=8">이벤트</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/board/faq/list.html?board_no=27">고객센터</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                커뮤니티
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="communityDropdown">
+                                <a class="dropdown-item" href="/board/review/gallery.html">사용후기</a>
+                                <a class="dropdown-item" href="/journal">월간저널</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="navbar-nav icon_header d-none d-lg-flex">
+                    <li>
+                        <a href="">
+                            <img src="./assets/img/svg/user.svg" alt="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./assets/img/svg/cart.svg" alt="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <img src="./assets/img/svg/search.svg" alt="" />
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="block_banner">
+                <div class="title">
+                    <h1>반신욕기</h1>
+                </div>
+
+                <div class="banner">
+                    <div class="d-none d-lg-block">
+                        <a href="">
+                            <img src="./assets/img/banner_product.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="d-lg-none">
+                        <a href="">
+                            <img src="./assets/img/banner_product_sp.jpg" alt="" />
+                        </a>
+                    </div>
+
+                    <div class="content">
+                        <div class="main">건식 반신욕기</div>
+                        <div class="sub">에버조이 건식 반신욕기로 회복의 시간을 채워보세요</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="block_product">
+                <div class="title">
+                    <h2>PRODUCT</h2>
+                    <span class="line sline view"></span>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="count">
+                        <p>Total : 2</p>
+                    </div>
+                    <div class="soft">
+                        <select name="soft">
+                            <option value="신상품">신상품</option>
+                            <option value="낮은가격">낮은가격</option>
+                            <option value="높은가격">높은가격</option>
+                            <option value="인기상품">인기상품</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="swiper products_slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/img/bestchoice1.jpg" alt="브랜드쿠폰" />
+                            </a>
+                            <div class="description">
+                                <div class="name">
+                                    <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
+                                </div>
+                                <div class="price">
+                                    <del aria-hidden="true"
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></del
+                                    >
+                                    <ins
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>269.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></ins
+                                    >
+                                </div>
+
+                                <div class="price">
+                                    <span class="woocommerce-Price-amount amount"><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/img/bestchoice4.jpg" alt="브랜드쿠폰" />
+                            </a>
+                            <div class="description">
+                                <div class="name">
+                                    <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
+                                </div>
+                                <div class="price">
+                                    <del aria-hidden="true"
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></del
+                                    >
+                                    <ins
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>269.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></ins
+                                    >
+                                </div>
+
+                                <div class="price">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span>
+                                        </bdi>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/img/bestchoice2.jpg" alt="브랜드쿠폰" />
+                            </a>
+                            <div class="description">
+                                <div class="name">
+                                    <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
+                                </div>
+                                <div class="price">
+                                    <del aria-hidden="true"
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></del
+                                    >
+                                    <ins
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>269.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></ins
+                                    >
+                                </div>
+
+                                <div class="price">
+                                    <span class="woocommerce-Price-amount amount"
+                                        ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/img/bestchoice1.jpg" alt="브랜드쿠폰" />
+                            </a>
+                            <div class="description">
+                                <div class="name">
+                                    <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
+                                </div>
+                                <div class="price">
+                                    <del aria-hidden="true"
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></del
+                                    >
+                                    <ins
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>269.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></ins
+                                    >
+                                </div>
+
+                                <div class="price">
+                                    <span class="woocommerce-Price-amount amount"
+                                        ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/img/bestchoice3.jpg" alt="브랜드쿠폰" />
+                            </a>
+                            <div class="description">
+                                <div class="name">
+                                    <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
+                                </div>
+                                <div class="price">
+                                    <del aria-hidden="true"
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></del
+                                    >
+                                    <ins
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>269.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></ins
+                                    >
+                                </div>
+
+                                <div class="price">
+                                    <span class="woocommerce-Price-amount amount"
+                                        ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/img/bestchoice4.jpg" alt="브랜드쿠폰" />
+                            </a>
+                            <div class="description">
+                                <div class="name">
+                                    <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
+                                </div>
+                                <div class="price">
+                                    <del aria-hidden="true"
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></del
+                                    >
+                                    <ins
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>269.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></ins
+                                    >
+                                </div>
+
+                                <div class="price">
+                                    <span class="woocommerce-Price-amount amount"
+                                        ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/img/bestchoice2.jpg" alt="브랜드쿠폰" />
+                            </a>
+                            <div class="description">
+                                <div class="name">
+                                    <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
+                                </div>
+                                <div class="price">
+                                    <del aria-hidden="true"
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></del
+                                    >
+                                    <ins
+                                        ><span class="woocommerce-Price-amount amount"
+                                            ><bdi>269.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                        ></ins
+                                    >
+                                </div>
+
+                                <div class="price">
+                                    <span class="woocommerce-Price-amount amount"
+                                        ><bdi>299.000&nbsp;<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="block_footer">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="title">INFO</div>
+                        <div class="contents">
+                            <div>
+                                <a href="">이용약관</a>
+                            </div>
+                            <div>
+                                <a href="">개인정보처리방침</a>
+                            </div>
+                            <div>
+                                <a href="">이용안내</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="title">전화주문</div>
+                        <div class="contents">
+                            <div class="call">1688-2175</div>
+                            <div class="time">월~금 AM 10:00 ~ PM 03:00</div>
+                            <div class="lunch">점심시간 AM 11:50 ~ PM 01:10</div>
+                            <div class="off">주말, 공휴일 휴무</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="title">BANK</div>
+                        <div class="contents">
+                            <div>국민은행 : 756001-00-153059</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="title">COMPANY</div>
+                        <div class="contents">
+                            <div class="company">주식회사 에버조이</div>
+                            <div></div>
+                            <div>14345 경기도 광명시 양지로 21 (일직동) 16층</div>
+                            <div>
+                                <span><strong>대표</strong> 전도영</span>
+                                <span><strong>사업자등록번호</strong> 783-88-00423</span>
+                                <span><strong>통신판매업신고</strong> 2020-경기광명-0904</span
+                                ><span
+                                    ><a
+                                        href="#none"
+                                        oncdivck="window.open('http://www.ftc.go.kr/bizCommPop.do?wrkr_no=783-88-00423', 'bizCommPop', 'width=900, height=600;');return false;"
+                                    >
+                                        [사업자정보확인]</a
+                                    ></span
+                                >
+                            </div>
+                            <div>
+                                <span>
+                                    <strong>개인정보관리책임자</strong>
+                                    <a href="mailto:order@everjoy.co.kr" class="mailto">전도영 order@everjoy.co.kr</a>
+                                </span>
+                                <span><strong>전화</strong> 1688-2175</span>
+                                <span><strong>팩스</strong> 02-897-7266</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cpr_area">
+                    <!-- <li class="link">KG 이니시스 에스크로 <a href="https://www.inicis.com/" target="_blank">서비스가입사실확인</a></li>-->
+                    <div>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 PG사의 구매안전서비스를 이용하실 수 있습니다.</div>
+                    <div class="copy">COPYRIGHT © 에버조이 ALL RIGHTS RESERVED. <a href="https://simgorae.com/" target="blank_"></a></div>
+                </div>
+            </div>
+
+            <div class="bottom_nav d-lg-none">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <a href="">
+                            <img src="./assets/img/svg/user.svg" alt="" />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <img src="./assets/img/svg/search.svg" alt="" />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <img src="./assets/img/svg/house.svg" alt="" />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <img src="./assets/img/svg/cart.svg" alt="" />
+                        </a>
+                    </div>
+                    <div>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#navbarNav"
+                            aria-controls="navbarNav"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="./assets/js/custom_swiper.js"></script>
+        <script src="./assets/js/index.js"></script>
+    </body>
+</html>

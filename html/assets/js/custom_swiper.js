@@ -51,10 +51,8 @@ var swiper = new Swiper(".bestchoice_slide", {
   pagination: {
       el: ".swiper-pagination",
   },
+  slidesPerView: 2,
   breakpoints: {
-    640: {
-      slidesPerView: 1,
-    },
     768: {
       slidesPerView: 3,
     },
@@ -63,6 +61,22 @@ var swiper = new Swiper(".bestchoice_slide", {
     },
   },
   spaceBetween: 10,
-  centeredSlides: true,
+  loop: true,
+});
+
+var swiper = new Swiper(".products_slide", {
+  pagination: {
+      el: ".swiper-pagination",
+  },
+  slidesPerView: 2,
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
+  spaceBetween: 10,
   loop: true,
 });

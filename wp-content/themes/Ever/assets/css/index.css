@@ -677,7 +677,7 @@ main {
     top: 5px;
     right: 5px;
     content: "";
-    display: block;
+    display: none;
     background: #333;
     width: 15px;
     height: 1px;
@@ -701,7 +701,7 @@ main {
     top: 30px;
     right: 5px;
     content: "";
-    display: block;
+    display: none;
     background: #333;
     width: 15px;
     height: 1px;
@@ -712,4 +712,11 @@ main {
 
 .block_footer .col-lg-3.selected > .title::after {
     opacity: 1;
+}
+
+@media screen and (max-width: 1024px){
+    .block_footer .col-lg-3 > .title::after,
+    .block_footer .col-lg-3 > .title::before {
+        display: block;
+    }
 }
