@@ -91,87 +91,36 @@ if (!empty($groups_banner['list_banner'])) {
         <h2><?php echo !empty($groups_bestchoice['title']) ? $groups_bestchoice['title'] : '베스트 랭킹' ?></h2>
         <span class="line sline view"></span>
     </div>
-    <div class="swiper bestchoice_slide">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/bestchoice1.jpg" alt="브랜드쿠폰" />
-                </a>
-                <div class="description">
-                    <div class="name">
-                        <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
+    <?php
+    if (!empty($groups_bestchoice['product'])) { ?>
+        <div class="swiper bestchoice_slide">
+            <div class="swiper-wrapper">
+                <?php
+                foreach ($groups_bestchoice['product'] as $itemProduct) { ?>
+                    <?php
+                    $product = wc_get_product($itemProduct);
+                    $title = get_the_title($itemProduct);
+                    $thumbnail = get_the_post_thumbnail_url($itemProduct);
+                    $link = get_permalink($itemProduct);
+                    $price = $product->get_price_html();
+                    ?>
+                    <div class="swiper-slide">
+                        <a href="<?php echo $link; ?>">
+                            <img src="<?php echo $thumbnail; ?>" alt="<?php echo $title; ?>" />
+                        </a>
+                        <div class="description">
+                            <div class="name">
+                                <a href="<?php echo $link; ?>"><?php echo $title; ?></a>
+                            </div>
+                            <div class="price-product"><?php echo $price; ?></div>
+                        </div>
                     </div>
-                    <div class="price">959,000원 <span>1,390,000원</span></div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/bestchoice4.jpg" alt="브랜드쿠폰" />
-                </a>
-                <div class="description">
-                    <div class="name">
-                        <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
-                    </div>
-                    <div class="price">959,000원 <span>1,390,000원</span></div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/bestchoice2.jpg" alt="브랜드쿠폰" />
-                </a>
-                <div class="description">
-                    <div class="name">
-                        <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
-                    </div>
-                    <div class="price">959,000원 <span>1,390,000원</span></div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/bestchoice1.jpg" alt="브랜드쿠폰" />
-                </a>
-                <div class="description">
-                    <div class="name">
-                        <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
-                    </div>
-                    <div class="price">959,000원 <span>1,390,000원</span></div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/bestchoice3.jpg" alt="브랜드쿠폰" />
-                </a>
-                <div class="description">
-                    <div class="name">
-                        <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
-                    </div>
-                    <div class="price">959,000원 <span>1,390,000원</span></div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/bestchoice4.jpg" alt="브랜드쿠폰" />
-                </a>
-                <div class="description">
-                    <div class="name">
-                        <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
-                    </div>
-                    <div class="price">959,000원 <span>1,390,000원</span></div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <a href="">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/bestchoice2.jpg" alt="브랜드쿠폰" />
-                </a>
-                <div class="description">
-                    <div class="name">
-                        <a href=""> [4차 예약판매] 온목(ONMOK) 건식 반신욕기 좌식사우나 (2/5~ 순차배송) </a>
-                    </div>
-                    <div class="price">959,000원 <span>1,390,000원</span></div>
-                </div>
+                <?php }
+                ?>
             </div>
         </div>
-    </div>
+    <?php }
+    ?>
 </section>
 <?php $groups_story = get_field('groups_story'); ?>
 <!-- Story -->
@@ -199,13 +148,6 @@ if (!empty($groups_banner['list_banner'])) {
     <div class="title">
         <h2><?php echo !empty($groups_review['title']) ? $groups_review['title'] : '리뷰' ?></h2>
         <span class="line sline view"></span>
-    </div>
-    <div class="filter text-right">
-        <select name="soft" id="soft">
-            <option value="audi">최신 리뷰순</option>
-            <option value="saab">리뷰 평점순</option>
-            <option value="mercedes">리뷰 추천순</option>
-        </select>
     </div>
     <?php if (!empty($groups_review['list_review'])) { ?>
         <div class="row">
@@ -266,6 +208,6 @@ if (!empty($groups_banner['list_banner'])) {
             ?>
         </div>
     <?php } ?>
-    
+
 </section>
 <?php get_footer(); ?>

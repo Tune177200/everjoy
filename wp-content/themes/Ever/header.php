@@ -16,7 +16,7 @@
         $header = get_field('header', 'option');
         ?>
         <nav class="main-menu navbar navbar-expand-lg navbar-light bg-light justify-content-between align-items-center">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?php echo home_url() ?>">
                 <img src="<?php echo !empty($header['logo']) ? $header['logo']['url'] : get_stylesheet_directory_uri().'/assets/img/everjoy_logo1.png' ?>" alt="" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
