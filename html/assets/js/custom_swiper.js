@@ -64,19 +64,30 @@ var swiper = new Swiper(".bestchoice_slide", {
   loop: true,
 });
 
-var swiper = new Swiper(".products_slide", {
-  pagination: {
-      el: ".swiper-pagination",
-  },
-  slidesPerView: 2,
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 4,
-    },
-  },
+
+var swiper = new Swiper(".thumb_slide", {
   spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+var swiper2 = new Swiper(".preview_slide", {
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: swiper,
+  },
+});
+
+
+var swiper = new Swiper(".voucher_slider", {
+  slidesPerView: 1,
   loop: true,
+  autoplay:true,
+  pagination: {
+    el: ".swiper-pagination",
+  },
 });

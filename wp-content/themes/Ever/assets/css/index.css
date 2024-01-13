@@ -375,6 +375,18 @@ main {
 
 /* Benefit  */
 
+
+.block_benefit {
+    padding: 0 30px;
+}
+
+@media screen and (max-width:1024px) {
+    .block_benefit {
+        padding: 0 5px;
+    }
+}
+
+
 /* Best choice  */
 
 .block_bestchoice {
@@ -399,21 +411,25 @@ main {
     color: black;
 }
 
-.block_bestchoice .description .price {
+.block_bestchoice .description .price-product {
     margin-top: 20px;
     font-size: 17px;
     font-weight: 500;
     color: black;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: start;
     align-items: flex-end;
 }
 
-.block_bestchoice .description .price del {
+.block_bestchoice .description .price-product del {
     font-size: 13px;
     color: #999;
     text-decoration: line-through;
+}
+
+.block_bestchoice .description .price-product ins {
+    text-decoration: none;
 }
 
 @media screen and (max-width:1024px) {
