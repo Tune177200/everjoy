@@ -79,8 +79,8 @@ if (!empty($groups_banner['list_banner'])) {
                         </a>
                     </div>
                 <?php } ?>
-                <div class="swiper-pagination"></div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     <?php } ?>
 </section>

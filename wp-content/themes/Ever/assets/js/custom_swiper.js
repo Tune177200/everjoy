@@ -63,6 +63,6 @@ var swiper = new Swiper(".bestchoice_slide", {
     },
   },
   spaceBetween: 10,
-  centeredSlides: true,
+  // centeredSlides: true,
   loop: true,
 });
