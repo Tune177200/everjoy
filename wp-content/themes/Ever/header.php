@@ -73,11 +73,35 @@
                                 </a>
                             </li>
                     <?php
-                       
                     }
+                    ?>
+                    <li data-toggle="modal" data-target="#search_modal">
+                        <a href="#none">
+                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/svg/search.svg" alt="">
+                        </a>
+                    </li>
+                    <?php
                 echo '</div>';
             }
             ?>
         </nav>
     </header>
+    
+    <div class="modal fade search_modal" id="search_modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <form class="search_input d-flex" action="">
+                        <input type="text" placeholder="Search.." name="s">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main>

@@ -48,6 +48,7 @@ if(!function_exists('ever_menu')){
 
 function loadStyle(){
     wp_enqueue_style('bootstrap-min-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css');
+    wp_enqueue_style('fontawesome-min-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
     wp_enqueue_style('swiper-bundle-min-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
     wp_enqueue_style('custom-swiper-css', get_stylesheet_directory_uri().'/assets/css/custom_swiper.css');
     wp_enqueue_style('index-css', get_stylesheet_directory_uri().'/assets/css/index.css');
@@ -109,3 +110,22 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
 }
+function Order($sorting_options){
+    $sorting_options = array(
+        'menu_order' => __( '기본 정렬', 'woocommerce' ),
+        'popularity' => __( '인기상품', 'woocommerce' ),
+        'date'       => __( '신상품', 'woocommerce' ),
+        'price'      => __( '낮은가격', 'woocommerce' ),
+        'price-desc' => __( '높은가격', 'woocommerce' ),
+    );
+
+    return $sorting_options;
+}
+add_filter('woocommerce_catalog_orderby', 'Order');
+
+function removeHook() {
+    // remove all wc my account's notices wrapper
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10 );
+
+}
+add_action( 'init', 'removeHook', 99 );
