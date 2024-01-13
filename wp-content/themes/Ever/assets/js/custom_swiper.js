@@ -43,7 +43,7 @@ var swiper = new Swiper(".benefit_slide", {
     },
   },
   spaceBetween: 10,
-  centeredSlides: true,
+  // centeredSlides: true,
   loop: true,
 });
 
