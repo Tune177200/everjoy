@@ -1,11 +1,9 @@
 <?php
 
 /**
- * Result Count
+ * Product Loop End
  *
- * Shows text: Showing x - x of x results.
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/loop/result-count.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/loop/loop-end.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -15,13 +13,12 @@
  *
  * @see         https://woo.com/document/template-structure/
  * @package     WooCommerce\Templates
- * @version     3.7.0
+ * @version     2.0.0
  */
 
 if (!defined('ABSPATH')) {
-	exit;
+    exit;
 }
 ?>
-<div class="count">
-	<?php printf(_n('Total %d', 'Total %d', $total, 'woocommerce'), $total); ?>
+</div>
 </div>
