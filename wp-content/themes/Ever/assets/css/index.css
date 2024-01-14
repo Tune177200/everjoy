@@ -418,7 +418,7 @@ main {
     color: black;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: start;
     align-items: flex-end;
 }
 
@@ -426,6 +426,10 @@ main {
     font-size: 13px;
     color: #999;
     text-decoration: line-through;
+}
+
+.block_bestchoice .description .price ins {
+    text-decoration: none;
 }
 
 @media screen and (max-width:1024px) {

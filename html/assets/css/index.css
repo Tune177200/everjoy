@@ -428,6 +428,10 @@ main {
     text-decoration: line-through;
 }
 
+.block_bestchoice .description .price ins {
+    text-decoration: none;
+}
+
 @media screen and (max-width:1024px) {
     .block_bestchoice {
         padding: 0 5px;
@@ -983,9 +987,24 @@ main {
     padding: 80px 0;
 }
 
+@media screen and (min-width: 1200px) {
+    .block_detail_product .container {
+        max-width: 1370px;
+    }
+}
+
+.block_detail_product .view_product{
+    margin-bottom: 80px;
+}
+
 .block_detail_product .thumb_slide {
     margin: 10px 0;
     height: 177px;
+}
+
+.block_detail_product .thumb_slide img {
+    height: 100%;
+    object-fit: cover;
 }
 
 .block_detail_product h1{
@@ -996,21 +1015,26 @@ main {
     border-top: 2px solid #333;
 }
 
-.block_detail_product .price p{
+.block_detail_product .price {
     vertical-align: middle;
-    text-decoration: line-through;
     color: #bdbdbd;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.45em;
     padding: 5px 5px 5px 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.block_detail_product .price span {
-    font-size: 16px;
+.block_detail_product .price ins {
+    font-size: 32px;
     line-height: 1.45em;
     color: #656e75;
     padding: 5px 5px 5px 0;
     text-decoration: none;
+    color: #222;
+    font-weight: 700;
 }
 
 .block_detail_product  .sale p {
@@ -1018,6 +1042,10 @@ main {
     font-size: 28px;
     font-weight: 700;
     padding: 5px 0;
+}
+
+.block_detail_product .woocommerce-product-details__short-description {
+    margin:20px 0;
 }
 
 .block_detail_product .sale span {
@@ -1180,26 +1208,32 @@ main {
 }
 
 .block_detail_product .choosenumber input{
-    height:30px;
+    height:40px;
     width: 45px;
     text-align: center;
-    font-size: 13px;
+    font-size: 18px;
     border:1px solid #ddd;
     display: inline-block;
     vertical-align: middle;
     color: #000;
 }
 
+.block_detail_product .choosenumber input::-webkit-outer-spin-button,
+.block_detail_product .choosenumber input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .block_detail_product .choosenumber .minus,
 .block_detail_product .choosenumber .plus{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border: 1px solid #eee;
     box-sizing: border-box;
     overflow: hidden;
     padding: 1px;
     text-align: center;
-    font-size: 10px;
+    font-size: 13px;
     line-height: 3;
 }
 
@@ -1240,9 +1274,9 @@ main {
     justify-content: center;
 }
 
-.actual_button .purchase-now {
+.single_add_to_cart_button  {
     width: 100%;
-    background: black;
+    background-color: black !important;
     color: white;
     font-weight: 700;
     padding: 22px 0;
@@ -1250,6 +1284,7 @@ main {
     font-size: 12px;
     text-align: center;
     height: 60px;
+    margin: 20px 0 !important;
 }
 
 .voucher_slider {
@@ -1385,5 +1420,49 @@ main {
         width: 100%;
         z-index: 1000;
         left: 0;
+    }
+}
+
+.block_privacy {
+    padding: 80px 0;
+}
+
+.block_privacy .contents {
+    position: relative;
+    margin: 0 auto;
+    min-width: 320px;
+    padding: 110px 5% 50px;
+}
+
+.block_privacy h1 {
+    padding: 0;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+.block_privacy .txtarea {
+    border:1px solid #e5e5e5;
+    padding: 20px;
+    color: #6d6d6d;
+    font-size: 12px;
+}
+
+@media (max-width: 640px) {
+    .block_privacy .contents {
+        padding: 50px 1% 50px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .block_privacy .contents {
+        padding: 110px 10% 50px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .block_privacy {
+        padding: 40px 0;
     }
 }

@@ -34,84 +34,86 @@ if (post_password_required()) {
 ?>
 <section class="block_detail_product">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="preview">
-                    <?php
-                    $post_thumbnail_id = wp_get_attachment_url($product->get_image_id());
-                    $gallery_ids = $product->get_gallery_image_ids();
-                    ?>
-                    <div class="swiper preview_slide custom_slide">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="<?php echo esc_url($post_thumbnail_id) ?>" />
-                            </div>
-                            <?php
-                            if (!empty($gallery_ids)) {
-                                foreach ($gallery_ids as $gallery_id) {
-                                    $image_url = wp_get_attachment_url($gallery_id); ?>
-                                    <div class="swiper-slide">
-                                        <img src="<?php echo esc_url($image_url) ?>" />
-                                    </div>
+        <div class="view_product">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="preview">
+                        <?php
+                        $post_thumbnail_id = wp_get_attachment_url($product->get_image_id());
+                        $gallery_ids = $product->get_gallery_image_ids();
+                        ?>
+                        <div class="swiper preview_slide custom_slide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="<?php echo esc_url($post_thumbnail_id) ?>" />
+                                </div>
+                                <?php
+                                if (!empty($gallery_ids)) {
+                                    foreach ($gallery_ids as $gallery_id) {
+                                        $image_url = wp_get_attachment_url($gallery_id); ?>
+                                        <div class="swiper-slide">
+                                            <img src="<?php echo esc_url($image_url) ?>" />
+                                        </div>
 
-                            <?php }
-                            }
-                            ?>
+                                    <?php }
+                                }
+                                ?>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                    <div thumbsSlider="" class="swiper thumb_slide">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="<?php echo esc_url($post_thumbnail_id) ?>" />
-                            </div>
-                            <?php
-                            if (!empty($gallery_ids)) {
-                                foreach ($gallery_ids as $gallery_id) {
-                                    $image_url = wp_get_attachment_url($gallery_id); ?>
-                                    <div class="swiper-slide">
-                                        <img src="<?php echo esc_url($image_url) ?>" />
-                                    </div>
+                        <div thumbsSlider="" class="swiper thumb_slide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="<?php echo esc_url($post_thumbnail_id) ?>" />
+                                </div>
+                                <?php
+                                if (!empty($gallery_ids)) {
+                                    foreach ($gallery_ids as $gallery_id) {
+                                        $image_url = wp_get_attachment_url($gallery_id); ?>
+                                        <div class="swiper-slide">
+                                            <img src="<?php echo esc_url($image_url) ?>" />
+                                        </div>
 
-                            <?php }
-                            }
-                            ?>
+                                    <?php }
+                                }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <?php
-                /**
-                 * Hook: woocommerce_single_product_summary.
-                 *
-                 * @hooked woocommerce_template_single_title - 5
-                 * @hooked woocommerce_template_single_rating - 10
-                 * @hooked woocommerce_template_single_price - 10
-                 * @hooked woocommerce_template_single_excerpt - 20
-                 * @hooked woocommerce_template_single_add_to_cart - 30
-                 * @hooked woocommerce_template_single_meta - 40
-                 * @hooked woocommerce_template_single_sharing - 50
-                 * @hooked WC_Structured_Data::generate_product_data() - 60
-                 */
-                do_action('woocommerce_single_product_summary');
+                <div class="col-lg-6">
+                    <?php
+                    /**
+                     * Hook: woocommerce_single_product_summary.
+                     *
+                     * @hooked woocommerce_template_single_title - 5
+                     * @hooked woocommerce_template_single_rating - 10
+                     * @hooked woocommerce_template_single_price - 10
+                     * @hooked woocommerce_template_single_excerpt - 20
+                     * @hooked woocommerce_template_single_add_to_cart - 30
+                     * @hooked woocommerce_template_single_meta - 40
+                     * @hooked woocommerce_template_single_sharing - 50
+                     * @hooked WC_Structured_Data::generate_product_data() - 60
+                     */
+                    do_action('woocommerce_single_product_summary');
 
-                $coupon = get_field('coupon');
-                if (!empty($coupon['list_coupon'])) { ?>
-                    <div class="swiper voucher_slider custom_swiper_pagination">
-                        <div class="swiper-wrapper">
-                            <?php foreach ($coupon['list_coupon'] as $itemCoupon) { ?>
-                                <div class="swiper-slide">
-                                    <img src="<?php echo $itemCoupon['coupon']['url'] ?>" />
-                                </div>
-                            <?php } ?>
+                    $coupon = get_field('coupon');
+                    if (!empty($coupon['list_coupon'])) { ?>
+                        <div class="swiper voucher_slider custom_swiper_pagination">
+                            <div class="swiper-wrapper">
+                                <?php foreach ($coupon['list_coupon'] as $itemCoupon) { ?>
+                                    <div class="swiper-slide">
+                                        <img src="<?php echo $itemCoupon['coupon']['url'] ?>" />
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
 
-                <?php }
-                ?>
+                    <?php }
+                    ?>
+                </div>
             </div>
         </div>
         <div class="content-product">

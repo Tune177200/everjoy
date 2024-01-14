@@ -112,7 +112,7 @@ if (!empty($groups_banner['list_banner'])) {
                             <div class="name">
                                 <a href="<?php echo $link; ?>"><?php echo $title; ?></a>
                             </div>
-                            <div class="price-product"><?php echo $price; ?></div>
+                            <div class="price"><?php echo $price; ?></div>
                         </div>
                     </div>
                 <?php }
