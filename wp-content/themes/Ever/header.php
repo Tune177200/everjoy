@@ -76,7 +76,7 @@
                     }
                     ?>
                     <li data-toggle="modal" data-target="#search_modal">
-                        <a href="#none">
+                        <a>
                             <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/svg/search.svg" alt="">
                         </a>
                     </li>
@@ -95,7 +95,7 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <form class="search_input d-flex" action="">
+                    <form class="search_input d-flex" action="<?php echo home_url(); ?>">
                         <input type="text" placeholder="Search.." name="s">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
