@@ -52,6 +52,7 @@ function loadStyle(){
     wp_enqueue_style('swiper-bundle-min-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
     wp_enqueue_style('custom-swiper-css', get_stylesheet_directory_uri().'/assets/css/custom_swiper.css');
     wp_enqueue_style('index-css', get_stylesheet_directory_uri().'/assets/css/index.css');
+    wp_enqueue_style('custom-css', get_stylesheet_directory_uri().'/assets_custom/css/custom.css');
 
     wp_enqueue_script('jquery-min-js', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', array('jquery'), false, true);
     wp_enqueue_script('popper-min-js', 'https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js', array('jquery'), false, true);

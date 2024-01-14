@@ -151,6 +151,10 @@ if (post_password_required()) {
         <?php }
         ?>
 
+<?php 
+comment_form( );
+?>
+
     </div>
 </section>
 

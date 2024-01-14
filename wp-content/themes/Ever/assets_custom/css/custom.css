@@ -1,0 +1,42 @@
+#respond {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#reply-title {
+    font-size: 24px;
+}
+
+#cancel-comment-reply-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.logged-in-as {
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.comment-form-comment textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-submit input {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.required-field-message {
+    color: #ff0000;
+    font-weight: bold;
+}

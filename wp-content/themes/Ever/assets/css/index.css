@@ -548,7 +548,7 @@ main {
 /* Product  */
 
 .block_review {
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .block_review .image {
@@ -680,6 +680,13 @@ main {
     padding: 15px 0px;
 }
 
+@media screen and (max-width:1024px) {
+    .block_review {
+        padding: 0 15px;
+    }
+}
+
+
 /* Footer  */
 
 .bottom_nav {
@@ -712,7 +719,11 @@ main {
 }
 
 .block_footer {
-    padding: 0 30px 20px;
+    padding: 45px 30px 20px;
+}
+
+.block_footer  .row {
+    border-top: 1px solid #eee;
 }
 
 .block_footer .title{
@@ -1437,7 +1448,7 @@ main {
 .block_privacy h1 {
     padding: 0;
     color: #000;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
     margin: 10px 0 20px;
 }
@@ -1445,8 +1456,8 @@ main {
 .block_privacy .txtarea {
     border:1px solid #e5e5e5;
     padding: 20px;
-    color: #6d6d6d;
-    font-size: 12px;
+    color: #000;
+    font-size: 20px;
 }
 
 @media (max-width: 640px) {

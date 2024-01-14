@@ -9,6 +9,7 @@ $args = array(
 );
 $query = new WP_Query($args);
 ?>
+<?php $banner_archive = get_field('banner_archive', 'option'); ?>
 <section class="block_banner">
     <div class="title">
         <h1><?php echo $_GET['s'] ?></h1>
@@ -16,13 +17,13 @@ $query = new WP_Query($args);
 
     <div class="banner">
         <div class="d-none d-lg-block">
-            <a href="">
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/banner_product.jpg" alt="">
+            <a href="<?php echo !empty($banner_archive['link']['url']) ? $banner_archive['link']['url'] : '#' ?>">
+                <img src="<?php echo !empty($banner_archive['banner_mb']) ? $banner_archive['banner_mb']['url'] : get_stylesheet_directory_uri().'/assets/img/banner_product.jpg' ?>" alt="">
             </a>
         </div>
         <div class="d-lg-none">
-            <a href="">
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/banner_product_sp.jpg" alt="">
+            <a href="<?php echo !empty($banner_archive['link']['url']) ? $banner_archive['link']['url'] : '#' ?>">
+                <img src="<?php echo !empty($banner_archive['banner_pc']) ? $banner_archive['banner_pc']['url'] : get_stylesheet_directory_uri().'/assets/img/banner_product.jpg' ?>" alt="">
             </a>
         </div>
 
