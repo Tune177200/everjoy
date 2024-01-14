@@ -126,6 +126,32 @@ add_filter('woocommerce_catalog_orderby', 'Order');
 function removeHook() {
     // remove all wc my account's notices wrapper
     remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+    remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
+    remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+    add_action('woocommerce_shop_loop_item_title', 'custom_template_loop_product_title', 10);
 
 }
 add_action( 'init', 'removeHook', 99 );
+
+function custom_template_loop_product_title() {
+    echo get_the_title();
+}
+
+function custom_currency_symbol( $currency_symbol, $currency ) {
+   
+    $currency_symbol = '원';
+
+    return $currency_symbol;
+}
+
+add_filter( 'woocommerce_currency_symbol', 'custom_currency_symbol', 10, 2 );
+
+function custom_products_per_page( $cols ) {
+    $custom_per_page = 8;
+
+    return $custom_per_page;
+}
+
+add_filter( 'loop_shop_per_page', 'custom_products_per_page', 20 );
