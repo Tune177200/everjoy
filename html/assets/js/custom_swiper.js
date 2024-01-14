@@ -80,6 +80,7 @@ var swiper2 = new Swiper(".preview_slide", {
   thumbs: {
     swiper: swiper,
   },
+  loop:true,
 });
 
 
