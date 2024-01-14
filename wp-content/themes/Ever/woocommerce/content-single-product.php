@@ -41,7 +41,7 @@ if (post_password_required()) {
                     $post_thumbnail_id = wp_get_attachment_url($product->get_image_id());
                     $gallery_ids = $product->get_gallery_image_ids();
                     ?>
-                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper preview_slide">
+                    <div class="swiper preview_slide custom_slide">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <img src="<?php echo esc_url($post_thumbnail_id) ?>" />

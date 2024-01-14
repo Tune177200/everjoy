@@ -984,7 +984,8 @@ main {
 }
 
 .block_detail_product .thumb_slide {
-    margin-top: 10px;
+    margin: 10px 0;
+    height: 177px;
 }
 
 .block_detail_product h1{
@@ -1259,9 +1260,6 @@ main {
     background: #C15740;
 }
 
-.voucher_slider .swiper-pagination {
-}
-
 .box_info_prod {
     margin-top: 50px;
 }
@@ -1374,6 +1372,11 @@ main {
 @media screen and (max-width:1024px) {
     .block_detail_product {
         padding: 40px 0;
+    }
+
+    
+    .block_detail_product .thumb_slide {
+        height: 125px;
     }
 
     .actual_button { 

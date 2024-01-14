@@ -10,7 +10,7 @@ $groups_banner = get_field('groups_banner');
 if (!empty($groups_banner['list_banner'])) {
 ?>
     <section>
-        <div class="swiper main_slide" id="main_slide">
+        <div class="swiper main_slide custom_slide" id="main_slide">
             <div class="swiper-wrapper">
                 <?php
                 foreach ($groups_banner['list_banner'] as $itemBanner) { ?>
